@@ -13,8 +13,6 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
-
 @Entity
 
 @Table(name = "tb_payment")
@@ -22,8 +20,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Payment implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
-
 
 	@Id
 
@@ -33,23 +29,14 @@ public class Payment implements Serializable {
 
 	private Instant moment;
 
-	
-
-	@JsonIgnore
-
 	@OneToOne
-
 	@MapsId
-
+	@JsonIgnore
 	private Order order;
-
-	
 
 	public Payment() {
 
 	}
-
-
 
 	public Payment(Long id, Instant moment, Order order) {
 
@@ -63,15 +50,11 @@ public class Payment implements Serializable {
 
 	}
 
-
-
 	public Long getId() {
 
 		return id;
 
 	}
-
-
 
 	public void setId(Long id) {
 
@@ -79,15 +62,11 @@ public class Payment implements Serializable {
 
 	}
 
-
-
 	public Instant getMoment() {
 
 		return moment;
 
 	}
-
-
 
 	public void setMoment(Instant moment) {
 
@@ -95,23 +74,17 @@ public class Payment implements Serializable {
 
 	}
 
-
-
 	public Order getOrder() {
 
 		return order;
 
 	}
 
-
-
 	public void setOrder(Order order) {
 
 		this.order = order;
 
 	}
-
-
 
 	@Override
 
@@ -126,8 +99,6 @@ public class Payment implements Serializable {
 		return result;
 
 	}
-
-
 
 	@Override
 
