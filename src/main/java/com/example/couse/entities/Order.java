@@ -19,6 +19,8 @@ import javax.persistence.Table;
 import com.example.couse.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+
+
 @Entity
 
 @Table(name = "tb_order")
@@ -27,17 +29,25 @@ public class Order implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+
+
 	@Id
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	private Long id;
 
+
+
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
 
 	private Instant moment;
 
+	
+
 	private Integer orderStatus;
+
+
 
 	@ManyToOne
 
@@ -45,15 +55,25 @@ public class Order implements Serializable {
 
 	private User client;
 
+
+
 	@OneToMany(mappedBy = "id.order")
+
 	private Set<OrderItem> items = new HashSet<>();
 
+	
+
 	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+
 	private Payment payment;
+
+	
 
 	public Order() {
 
 	}
+
+
 
 	public Order(Long id, Instant moment, OrderStatus orderStatus, User client) {
 
@@ -69,11 +89,15 @@ public class Order implements Serializable {
 
 	}
 
+
+
 	public Long getId() {
 
 		return id;
 
 	}
+
+
 
 	public void setId(Long id) {
 
@@ -81,11 +105,15 @@ public class Order implements Serializable {
 
 	}
 
+
+
 	public Instant getMoment() {
 
 		return moment;
 
 	}
+
+
 
 	public void setMoment(Instant moment) {
 
@@ -93,11 +121,15 @@ public class Order implements Serializable {
 
 	}
 
+	
+
 	public OrderStatus getOrderStatus() {
 
 		return OrderStatus.valueOf(orderStatus);
 
 	}
+
+
 
 	public void setOrderStatus(OrderStatus orderStatus) {
 
@@ -109,11 +141,15 @@ public class Order implements Serializable {
 
 	}
 
+
+
 	public User getClient() {
 
 		return client;
 
 	}
+
+
 
 	public void setClient(User client) {
 
@@ -121,20 +157,23 @@ public class Order implements Serializable {
 
 	}
 
-	  public Payment getPayment() {
-	  
-	  return payment;
-	  
-	  }
-	  
-	  
-	  
-	  public void setPayment(Payment payment) {
-	  
-	  this.payment = payment;
-	  
-	  }
-	 
+
+
+	public Payment getPayment() {
+
+		return payment;
+
+	}
+
+
+
+	public void setPayment(Payment payment) {
+
+		this.payment = payment;
+
+	}
+
+	
 
 	public Set<OrderItem> getItems() {
 
@@ -143,22 +182,24 @@ public class Order implements Serializable {
 	}
 
 	
-	 public Double getTotal() {
-	 
-	 double sum = 0.0;
-	 
-	 for (OrderItem x : items) {
-	 
-	 sum += x.getSubTotal();
-	 
-	 }
-	 
-	 return sum;
-	 
-	 }
-	 
-	 
-	 @Override
+
+	public Double getTotal() {
+
+		double sum = 0.0;
+
+		for (OrderItem x : items) {
+
+			sum += x.getSubTotal();
+
+		}
+
+		return sum;
+
+	}
+
+	
+
+	@Override
 
 	public int hashCode() {
 
@@ -171,6 +212,8 @@ public class Order implements Serializable {
 		return result;
 
 	}
+
+
 
 	@Override
 

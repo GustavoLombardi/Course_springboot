@@ -1,5 +1,4 @@
 package com.example.couse.resources;
-
 import java.net.URI;
 import java.util.List;
 
@@ -44,7 +43,7 @@ public class UserResource {
 
 	}
 
-	/*
+	
 
 	@GetMapping(value = "/{id}")
 
@@ -55,9 +54,8 @@ public class UserResource {
 		return ResponseEntity.ok().body(obj);
 
 	}
-	*/
 
-	/*
+	
 
 	@PostMapping
 
@@ -72,9 +70,9 @@ public class UserResource {
 		return ResponseEntity.created(uri).body(obj);
 
 	}
-*/
+
 	
-/*
+
 	@DeleteMapping(value = "/{id}")
 
 	public ResponseEntity<Void> delete(@PathVariable Long id) {
@@ -85,8 +83,7 @@ public class UserResource {
 
 	}
 
-	*/
-	/*
+	
 
 	@PutMapping(value = "/{id}")
 
@@ -97,5 +94,5 @@ public class UserResource {
 		return ResponseEntity.ok().body(obj);
 
 	}
-*/
+
 }

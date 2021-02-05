@@ -152,7 +152,6 @@ public class TestConfig implements CommandLineRunner {
 
 
 		orderRepository.save(o1);
-		
 
 	}
 

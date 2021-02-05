@@ -1,17 +1,30 @@
 package com.example.couse.entities;
 
 import java.io.Serializable;
+
 import java.time.Instant;
 
+
+
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
+
 import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
+
 import javax.persistence.MapsId;
+
 import javax.persistence.OneToOne;
+
 import javax.persistence.Table;
 
+
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 
 @Entity
 
@@ -21,6 +34,8 @@ public class Payment implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+
+
 	@Id
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,14 +44,23 @@ public class Payment implements Serializable {
 
 	private Instant moment;
 
-	@OneToOne
-	@MapsId
+	
+
 	@JsonIgnore
+
+	@OneToOne
+
+	@MapsId
+
 	private Order order;
+
+	
 
 	public Payment() {
 
 	}
+
+
 
 	public Payment(Long id, Instant moment, Order order) {
 
@@ -50,11 +74,15 @@ public class Payment implements Serializable {
 
 	}
 
+
+
 	public Long getId() {
 
 		return id;
 
 	}
+
+
 
 	public void setId(Long id) {
 
@@ -62,11 +90,15 @@ public class Payment implements Serializable {
 
 	}
 
+
+
 	public Instant getMoment() {
 
 		return moment;
 
 	}
+
+
 
 	public void setMoment(Instant moment) {
 
@@ -74,17 +106,23 @@ public class Payment implements Serializable {
 
 	}
 
+
+
 	public Order getOrder() {
 
 		return order;
 
 	}
 
+
+
 	public void setOrder(Order order) {
 
 		this.order = order;
 
 	}
+
+
 
 	@Override
 
@@ -99,6 +137,8 @@ public class Payment implements Serializable {
 		return result;
 
 	}
+
+
 
 	@Override
 

@@ -1,5 +1,4 @@
 package com.example.couse.resources;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +38,7 @@ public class OrderResource {
 	}
 
 	
-/*
+
 	@GetMapping(value = "/{id}")
 
 	public ResponseEntity<Order> findById(@PathVariable Long id) {
@@ -49,5 +48,5 @@ public class OrderResource {
 		return ResponseEntity.ok().body(obj);
 
 	}
-*/
+
 }

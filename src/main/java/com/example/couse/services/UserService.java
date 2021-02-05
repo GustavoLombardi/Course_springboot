@@ -1,5 +1,4 @@
 package com.example.couse.services;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -12,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import com.example.couse.entities.User;
 import com.example.couse.repositories.UserRepository;
+import com.example.couse.services.exceptions.DatabaseException;
+import com.example.couse.services.exceptions.ResourceNotFoundException;
 
 
 
@@ -32,7 +33,7 @@ public class UserService {
 		return repository.findAll();
 
 	}
-/*
+
 	
 
 	public User findById(Long id) {
@@ -42,7 +43,7 @@ public class UserService {
 		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 
 	}
-*/
+
 	
 
 	public User insert(User obj) {
@@ -52,7 +53,7 @@ public class UserService {
 	}
 
 	
-/*
+
 	public void delete(Long id) {
 
 		try {
@@ -71,8 +72,8 @@ public class UserService {
 
 	}
 
-	*/
-/*
+	
+
 	public User update(Long id, User obj) {
 
 		try {
@@ -91,7 +92,7 @@ public class UserService {
 
 	}
 
-*/
+
 
 	private void updateData(User entity, User obj) {
 

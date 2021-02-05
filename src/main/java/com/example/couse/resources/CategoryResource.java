@@ -1,5 +1,4 @@
 package com.example.couse.resources;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,14 +39,14 @@ public class CategoryResource {
 
 	
 
-//	@GetMapping(value = "/{id}")
+	@GetMapping(value = "/{id}")
 
-	//public ResponseEntity<Category> findById(@PathVariable Long id) {
+	public ResponseEntity<Category> findById(@PathVariable Long id) {
 
-		//Category obj = service.findById(id);
+		Category obj = service.findById(id);
 
-		//return ResponseEntity.ok().body(obj);
+		return ResponseEntity.ok().body(obj);
 
-	
+	}
 
 }
