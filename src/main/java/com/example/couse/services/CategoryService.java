@@ -10,17 +10,33 @@ import com.example.couse.entities.Category;
 import com.example.couse.repositories.CategoryRepository;
 
 
+
 @Service
+
 public class CategoryService {
 
+
+
 	@Autowired
+
 	private CategoryRepository repository;
+
 	
+
 	public List<Category> findAll() {
+
 		return repository.findAll();
+
 	}
-	public Category findByiD(long id ) {
+
+	
+
+	public Category findById(Long id) {
+
 		Optional<Category> obj = repository.findById(id);
+
 		return obj.get();
+
 	}
+
 }

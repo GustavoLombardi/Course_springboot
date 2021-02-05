@@ -12,25 +12,42 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.couse.entities.Category;
 import com.example.couse.services.CategoryService;
 
+
+
 @RestController
+
 @RequestMapping(value = "/categories")
+
 public class CategoryResource {
-	@Autowired
+
+
+
+	@Autowired 
+
 	private CategoryService service;
+
 	
+
 	@GetMapping
-	public ResponseEntity<List<Category>> findAll(){
+
+	public ResponseEntity<List<Category>> findAll() {
+
 		List<Category> list = service.findAll();
-				
+
 		return ResponseEntity.ok().body(list);
-		
+
 	}
+
 	
-	@GetMapping(value = "/{id}")
-	public ResponseEntity<Category> FindById(@PathVariable long id){
-		Category obj = service.findByiD(id);
-		return ResponseEntity.ok().body(obj);
-	}
+
+//	@GetMapping(value = "/{id}")
+
+	//public ResponseEntity<Category> findById(@PathVariable Long id) {
+
+		//Category obj = service.findById(id);
+
+		//return ResponseEntity.ok().body(obj);
+
+	
 
 }
-
